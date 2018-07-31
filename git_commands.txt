@@ -7,3 +7,7 @@ git config --global user.name "pratik"
 git config --global user.email "cutewidjack@gmail.com"
 git commit
 git push
+
+## git clone via ssh
+## after adding ssh pubkeys clone via ssh is needed to ensure git push does not ask for password
+git clone git@github.com:pitz143/cstudy.git
