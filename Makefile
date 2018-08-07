@@ -1,6 +1,6 @@
 CC=gcc
 CFLAGS=-I.
-EXES= bin/add bin/add_func bin/subs_func
+EXES= bin/add bin/add_func bin/subs_func bin/multi_func bin/divide_func
 bin/%.o: src/%.c 
 	$(CC) -c -o $@ $< $(CFLAGS)
 
