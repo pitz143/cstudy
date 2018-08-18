@@ -1,6 +1,6 @@
 /* this program is to do various operation on two numbers in a seperate function */
 #include<stdio.h>
-
+#include<stdbool.h>
 /* 
  * this is declaration of all the functions (declaration  also called as prototype)
  * input : two integer p and q (arguement)
@@ -16,26 +16,34 @@ void main()
 {
 	float a, b, ans;
 	char ops;
-	printf("enter first  number: \n");
-	scanf("%f", &a);
-	printf("enter second number: \n");
-	scanf("%f", &b);
-	printf("enter the operators [+, -, *, /]: \n");
-	scanf(" %c", &ops); /* extra space in %c is given to avoid the newline */
-	if (ops == '+') {
-		ans = add(a, b);  /* call / invoke add funtion */
-	} else if (ops == '-') {
-		ans = subs(a, b);
-	} else if (ops == '*') {
-		ans = multi(a, b);
-	} else if (ops == '/') {
-		ans = div(a, b);
-	} else {
-		printf("invalid operation. please enter one of these [+, -, *, /]\n");
-		return;
+	while (true) {
+		printf("enter first  number: \n");
+		scanf("%f", &a);
+		printf("enter second number: \n");
+		scanf("%f", &b);
+		printf("enter the operators [+, -, *, /]: \n");
+		scanf(" %c", &ops); /* extra space in %c is given to avoid the newline */
+		if (ops == '+') {
+			ans = add(a, b);  /* call / invoke add funtion */
+		} else if (ops == '-') {
+			ans = subs(a, b);
+		} else if (ops == '*') {
+			ans = multi(a, b);
+		} else if (ops == '/') {
+			ans = div(a, b);
+		} else {
+			printf("invalid operation. please enter one of these [+, -, *, /]\n");
+			return;
+		}
+		printf("the answer of %f %c %f = %f\n", a, ops, b, ans);
+		printf("press any key to continue. press 'e' to exit");
+		scanf(" %c", &ops);
+		if (ops == 'e' || ops == 'E') {
+			break;
+		} else {
+			continue;
+		}
 	}
-	printf("the answer of %f %c %f = %f\n", a, ops, b, ans);
-	
 }
 
 
