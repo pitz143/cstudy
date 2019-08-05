@@ -16,7 +16,8 @@ void main()
 {
 	float a, b, ans;
 	char ops;
-	while (true) {
+	int i;
+	for (i=0; i<20; i++) {
 		printf("enter first  number: \n");
 		scanf("%f", &a);
 		printf("enter second number: \n");

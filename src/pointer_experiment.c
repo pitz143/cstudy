@@ -6,18 +6,18 @@
  * input : two integer p and q (arguement)
  * output : integer which is sum of p and q (return value)
  */
-float add(float p, float q);
+int incr(int *a, int *b);
 
 /* this is main function  */
 void main()
 {
-	float a,b,sum;
+	int a,b,sum;
 	printf("enter first  number: \n");
-	scanf("%f",&a);
+	scanf("%d",&a);
 	printf("enter second number: \n");
-	scanf("%f",&b);
-	sum = add(a, b);  /* call / invoke add funtion */
-	printf("the sum of two number is: %f\n",sum);
+	scanf("%d",&b);
+	sum = incr(&a, &b);  /* call / invoke add funtion */
+	printf("in main: after increment a= %d b=%d\n",a,b);
 }
 
 
@@ -27,7 +27,9 @@ void main()
  * input : two integer p and q (arguement)
  * output : integer which is sum of p and q (return value)
  */
-float add(float p, float q)
+int incr(int *a, int *b)
 {
-	return (p+q);
+	(*a)++;
+	(*b)++;
+	printf("in incr: after increment a= %d b=%d\n",*a,*b);
 }

@@ -16,24 +16,30 @@ void main()
 {
 	float a, b, ans;
 	char ops;
-	while (true) {
+	int i;
+	for (i=0; i<20; i++) {
 		printf("enter first  number: \n");
 		scanf("%f", &a);
 		printf("enter second number: \n");
 		scanf("%f", &b);
 		printf("enter the operators [+, -, *, /]: \n");
 		scanf(" %c", &ops); /* extra space in %c is given to avoid the newline */
-		if (ops == '+') {
-			ans = add(a, b);  /* call / invoke add funtion */
-		} else if (ops == '-') {
-			ans = subs(a, b);
-		} else if (ops == '*') {
-			ans = multi(a, b);
-		} else if (ops == '/') {
-			ans = div(a, b);
-		} else {
-			printf("invalid operation. please enter one of these [+, -, *, /]\n");
-			return;
+		switch (ops) {
+			case '+':
+				ans = add(a, b);  /* call / invoke add funtion */
+				break;
+			case '-':
+				ans = subs(a, b);
+				break;
+			case '*':
+				ans = multi(a, b);
+				break;
+			case '/':
+				ans = div(a, b);
+				break;
+			default:
+				printf("invalid operation. please enter one of these [+, -, *, /]\n");
+				return;
 		}
 		printf("the answer of %f %c %f = %f\n", a, ops, b, ans);
 		printf("press any key to continue. press 'e' to exit");
